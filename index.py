@@ -10,11 +10,13 @@ def read_json():
 def save_csv(persons):
   with open('persons.csv', 'w', newline='') as file:
     output= csv.writer(file)
+    output.writerow(['nome', 'signo', 'email', 'endereco', 'numero', 'bairro', 
+    'celular', 'cor']);
     for person in persons: 
-      person = {"nome": person['nome'], "signo": person['signo'],
-        "email": person['email'], "endereco": person['endereco'],
-        "numero": person['numero'], "bairro": person['bairro'],
-        "celular": person['celular'], "cor": "%s" %(person['cor'])}
+      person = [person['nome'], person['signo'],
+        person['email'], person['endereco'],
+        person['numero'], person['bairro'],
+        person['celular'], person['cor']]
       output.writerow(person) 
 
 # ler arquivo
