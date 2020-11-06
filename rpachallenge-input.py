@@ -24,7 +24,7 @@ def scroll_up():
   r.click('arrow-up.png')
 
 
-def read_csv():
+def read_and_iterate_csv():
   with open('persons.csv', 'r') as file:
     inputfile = csv.reader(file)
     next(inputfile) # pular cabecalhos ['nome','signo','email','endereco',
@@ -110,7 +110,7 @@ def read_csv():
           r.hover('submit.png')
       r.click('submit.png') 
       
-read_csv()
+read_and_iterate_csv()
 
 r.close()
 
